@@ -1,0 +1,53 @@
+Use this sql dump to create tables used in this script.
+
+
+
+CREATE TABLE `category` (
+  `cat_id` int(2) NOT NULL auto_increment,
+  `category` varchar(25) NOT NULL default '',
+  PRIMARY KEY  (`cat_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+-- 
+-- Dumping data for table `category`
+-- 
+
+INSERT INTO `category` VALUES (1, 'Odisha');
+INSERT INTO `category` VALUES (2, 'Maharashtra');
+INSERT INTO `category` VALUES (3, 'Gujrat');
+INSERT INTO `category` VALUES (4, 'West Bengal');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `subcategory`
+-- 
+
+CREATE TABLE IF NOT EXISTS `subcategory` (
+  `subcat_id` int(3) NOT NULL AUTO_INCREMENT,
+  `cat_id` int(2) NOT NULL DEFAULT '0',
+  `subcategory` varchar(25) NOT NULL DEFAULT '',
+  UNIQUE KEY `subcat_id` (`subcat_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+
+--
+-- Dumping data for table `subcategory`
+--
+
+INSERT INTO `subcategory` (`subcat_id`, `cat_id`, `subcategory`) VALUES
+(1, 1, 'Rourkela'),
+(2, 1, 'Bhubaneswar'),
+(3, 1, 'Berhampur'),
+(4, 1, 'Sambalpur'),
+(5, 2, 'Mumbai'),
+(6, 2, 'Pune'),
+(7, 2, 'Kolhapur'),
+(8, 2, 'Ratnagiri'),
+(9, 3, 'Baroda'),
+(10, 3, 'Ahmedabad'),
+(11, 3, 'Gandhi Nagar'),
+(12, 3, 'Surat'),
+(13, 4, 'Kolkata'),
+(14, 4, 'Kharagpur'),
+(15, 4, 'Silchar'),
+(16, 4, 'Darjeeling');
